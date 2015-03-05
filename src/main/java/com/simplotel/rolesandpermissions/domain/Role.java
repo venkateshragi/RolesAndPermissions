@@ -14,7 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Role")
+@Table(name="ROLE")
 public class Role {
 	
 	@Id
@@ -22,35 +22,12 @@ public class Role {
     @Column(name = "ID")
     long id;
 	
-	@Column(name="rolename")
+	@Column(name="ROLE_NAME")
 	String roleName;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "ROLE_PERMISSION", joinColumns = @JoinColumn(name = "ROLE_ID"), inverseJoinColumns = @JoinColumn(name = "PERMISSION_ID"))
 	Set<Permission> permissions = new HashSet<Permission>();
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getRoleName() {
-		return roleName;
-	}
-
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
-
-	public Set<Permission> getPermissions() {
-		return permissions;
-	}
-
-	public void setPermissions(Set<Permission> permissions) {
-		this.permissions = permissions;
-	}
 
 }

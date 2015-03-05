@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Permission")
+@Table(name="PERMISSION")
 public class Permission {
 	
 	@Id
@@ -15,7 +15,7 @@ public class Permission {
     @Column(name = "ID")
     private long id;
 
-	@Column(name="permission_name")
+	@Column(name="PERMISSION_NAME")
 	String name;
 	
 }

@@ -2,8 +2,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.simplotel</groupId>
   <artifactId>rolesandpermissions</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1</version>
   <packaging>war</packaging>
+  <build>
+  	<finalName>rolesandpermissions</finalName>
+  </build>
   
   <properties>
   	<spring.version>3.0.5.RELEASE</spring.version>
@@ -42,6 +45,11 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
@@ -49,6 +57,16 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 		
@@ -98,6 +116,13 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
             <scope>compile</scope>
-        </dependency>	
+        </dependency>
+        
+        <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+        	
   </dependencies>
 </project>

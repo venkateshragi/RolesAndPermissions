@@ -6,14 +6,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-//@Entity
-//@Table(name="RESOURCE")
+
+@Entity
+@Table(name="RESOURCE")
 public class Resource {
 	
-//	@Id
-//    @GeneratedValue
-//    @Column(name = "ID")
-    private long id;
+	@Id
+    @GeneratedValue
+    @Column(name = "ID")
+    long id;
+    
+    @Column(name = "RESOURCE_TYPE")
+    ResourceType resourceType;
 	
 	
 
