@@ -1,5 +1,7 @@
 package com.simplotel.rolesandpermissions.doa;
 
-public interface UserDao {
+import com.simplotel.rolesandpermissions.domain.User;
+
+public interface UserDao extends GenericDao<User>{
 
 }
