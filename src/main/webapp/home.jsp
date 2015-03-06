@@ -28,20 +28,6 @@
 <a href="app/role/all">Roles</a>
 <a href="app/permission/all">Permissions</a>
 <br>
-
 <br>
-<table>
-<tr>
-<th>Hotel Name</th>
-<th>No. Of Rooms</th>
-</tr>
-<c:forEach var="i" begin="1" end="5">
-	<tr>
-   <td>H${i}</td>
-   <td>H${i}</td>
-   </tr>
-</c:forEach>
-</table>
-
 </body>
 </html>

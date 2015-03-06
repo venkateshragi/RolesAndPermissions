@@ -17,7 +17,7 @@ public class PermissionDaoHibernate extends GenericDaoHibernate<Permission> impl
 	}
 	
 	public List<Permission> getPermissions(String[] permissionIds){
-		Criteria criteria = createCriteria().add(Restrictions.in("ID", permissionIds));
+		Criteria criteria = createCriteria().add(Restrictions.in("id", permissionIds));
 		return criteria.list();
 		
 	}

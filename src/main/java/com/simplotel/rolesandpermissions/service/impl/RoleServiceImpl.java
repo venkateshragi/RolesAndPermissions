@@ -27,10 +27,12 @@ public class RoleServiceImpl implements RoleService{
 	}
 	
 	public Role createRole(String roleName, String[] permissionIds){
-		List<Permission> permissions = permissionDao.getPermissions(permissionIds);
 		Role role = new Role();
 		role.setRoleName(roleName);
-		role.getPermissions().addAll(permissions);
+		if(permissionIds.length != 0) {
+			List<Permission> permissions = permissionDao.getPermissions(permissionIds);
+			role.getPermissions().addAll(permissions);
+		}
 		long id = (Long) roleDao.save(role);
 		return roleDao.get(id);
 	}

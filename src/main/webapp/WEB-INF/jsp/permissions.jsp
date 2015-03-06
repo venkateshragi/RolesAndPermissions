@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>
-Add Resource
+Roles
 </title>
 </head>
 
@@ -11,15 +11,13 @@ Add Resource
 <a href="${context}/j_spring_security_logout">Logout</a>
 <a href="${context}/home.jsp">Home</a>
 
+
 <body>
-<c:set var="context" value="${pageContext.request.contextPath}" />
-<form action="${context}/app/role/save" method="POST">
-Name : <input type="text" name="roleName">
-<br>
-Type : <select name="permissions" multiple="multiple" >
+<table>
+<tr><th>RoleName</th></tr>
 <c:forEach items="${permissions}" var="permission">
-<option value="${permission.id}">${permission.name}</option>
+<tr>${permission.name}</tr>
 </c:forEach>
-</select>
-<input type="submit">
-</form>
+
+</table>
+</body>

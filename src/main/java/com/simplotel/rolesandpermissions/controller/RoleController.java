@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.simplotel.rolesandpermissions.domain.Role;
+import com.simplotel.rolesandpermissions.service.PermissionService;
 import com.simplotel.rolesandpermissions.service.RoleService;
 
 @Controller
@@ -19,6 +20,9 @@ public class RoleController extends BaseController {
 	
 	@Autowired
 	RoleService roleService;
+	
+	@Autowired
+	PermissionService permissionService;
 	
 	@RequestMapping("/all")
 	public ModelAndView allRole(){
@@ -30,9 +34,8 @@ public class RoleController extends BaseController {
 
 	@RequestMapping("/add")
 	public ModelAndView addRole(){
-		List<Role> allRoles = roleService.getAll();
 		ModelAndView mav = new ModelAndView("add_role");
-		mav.addObject("roles", allRoles);
+		mav.addObject("permissions", permissionService.getAll());
 		return mav;
 	}
 
@@ -41,6 +44,8 @@ public class RoleController extends BaseController {
 	public String createRole(HttpServletRequest request){
 		String roleName = request.getParameter("roleName");
 		String[] permissions = request.getParameterValues("permissions");
+		if(permissions == null)
+			permissions = new String[0];
 		roleService.createRole(roleName, permissions);
 		return "redirect:/app/role/add";
 	}
