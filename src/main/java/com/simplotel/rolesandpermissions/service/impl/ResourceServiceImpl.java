@@ -22,7 +22,8 @@ public class ResourceServiceImpl implements ResourceService{
 		Resource resource = new Resource();
 		resource.setName(name);
 		resource.setResourceType(resourceType);
-		return (Resource) resourcesDao.save(resource);
+		long id = (Long) resourcesDao.save(resource);
+		return resourcesDao.get(id);
 	}
 
 	public List<Resource> getAll() {

@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>
-Add Resource
+Assign Role
 </title>
 </head>
 
@@ -13,26 +13,21 @@ Add Resource
 
 <body>
 <c:set var="context" value="${pageContext.request.contextPath}" />
-<form action="${context}/app/resource/save" method="POST">
-Name : <input type="text" name="name">
+<form action="${context}/app/user/assign" method="POST">
+Users : <select name="userId">
+<c:forEach items="${users}" var="user">
+<option value="${user.id}">${user.username}</option>
+</c:forEach>
+</select>
 <br>
-Type : <select name="type">
-<option value="HOTEL">HOTEL</option>
+Roles : <select name="roleId">
+<c:forEach items="${roles}" var="role">
+<option value="${role.id}">${role.roleName}</option>
+</c:forEach>
 </select>
 <input type="submit">
 </form>
 
-<table>
-<tr>
-<th>ResourceName</th>
-<th>Type</th>
-</tr>
-<c:forEach items="${resources}" var="resource" >
-<tr>
-<td>${resource.name}</td>
-<td>${resource.resourceType}</td>
-</tr>
-</c:forEach>
-</table>
 </body>
 </html>
+

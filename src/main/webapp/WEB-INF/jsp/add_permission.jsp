@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>
-Add Resource
+Add Permission
 </title>
 </head>
 
@@ -24,15 +24,11 @@ Type : <select name="type">
 
 <table>
 <tr>
-<th>ResourceName</th>
-<th>Type</th>
+<th>PermissionName</th>
 </tr>
-<c:forEach items="${resources}" var="resource" >
+<c:forEach items="${permissions}" var="permission" >
 <tr>
-<td>${resource.name}</td>
-<td>${resource.resourceType}</td>
+<td>${permission.name}</td>
 </tr>
 </c:forEach>
 </table>
-</body>
-</html>

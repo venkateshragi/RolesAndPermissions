@@ -24,15 +24,11 @@ Type : <select name="type">
 
 <table>
 <tr>
-<th>ResourceName</th>
-<th>Type</th>
+<th>RoleName</th>
 </tr>
-<c:forEach items="${resources}" var="resource" >
+<c:forEach items="${roles}" var="role" >
 <tr>
-<td>${resource.name}</td>
-<td>${resource.resourceType}</td>
+<td>${role.roleName}</td>
 </tr>
 </c:forEach>
 </table>
-</body>
-</html>

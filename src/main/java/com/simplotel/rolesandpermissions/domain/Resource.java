@@ -2,6 +2,8 @@ package com.simplotel.rolesandpermissions.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -18,7 +20,8 @@ public class Resource {
 	
 	@Column(name="RESOURCE_NAME")
 	String name;
-    
+
+	@Enumerated(EnumType.STRING)
     @Column(name = "RESOURCE_TYPE")
     ResourceType resourceType;
 

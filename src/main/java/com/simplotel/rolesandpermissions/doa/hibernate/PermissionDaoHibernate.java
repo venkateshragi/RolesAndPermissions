@@ -1,5 +1,9 @@
 package com.simplotel.rolesandpermissions.doa.hibernate;
 
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import com.simplotel.rolesandpermissions.doa.PermissionDao;
@@ -10,6 +14,12 @@ public class PermissionDaoHibernate extends GenericDaoHibernate<Permission> impl
 
 	public PermissionDaoHibernate() {
 		super(Permission.class);
+	}
+	
+	public List<Permission> getPermissions(String[] permissionIds){
+		Criteria criteria = createCriteria().add(Restrictions.in("ID", permissionIds));
+		return criteria.list();
+		
 	}
 
 }

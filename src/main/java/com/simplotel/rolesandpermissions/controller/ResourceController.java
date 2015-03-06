@@ -10,14 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.simplotel.rolesandpermissions.domain.PermissionType;
 import com.simplotel.rolesandpermissions.domain.Resource;
 import com.simplotel.rolesandpermissions.domain.ResourceType;
 import com.simplotel.rolesandpermissions.service.ResourceService;
 
 @Controller
 @RequestMapping("/resource")
-public class ResourceController extends BaseController{
+public class ResourceController extends BaseController {
 	
 	@Autowired
 	ResourceService resourceService;
@@ -31,14 +30,12 @@ public class ResourceController extends BaseController{
 	}
 	
 	@RequestMapping("/save")
-	@PreAuthorize("hasRole('Admin')")
+	@PreAuthorize("hasRole('CREATE_RESOURCE')")
 	public String save(HttpServletRequest request){
 		String resourceName = request.getParameter("name");
 		String resourceType = request.getParameter("type");
-		if(hasPermission(request, PermissionType.CREATE, ResourceType.valueOf(resourceType))){
-			resourceService.createResource(resourceName, ResourceType.valueOf(resourceType));
-		}
-		return "add_resource";
+		resourceService.createResource(resourceName, ResourceType.valueOf(resourceType));
+		return "redirect:/app/resource/add";
 	}
 
 }

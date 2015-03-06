@@ -1,5 +1,6 @@
 package com.simplotel.rolesandpermissions.doa.hibernate;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -28,7 +29,7 @@ public abstract class GenericDaoHibernate<T> implements GenericDao<T>{
         return sessionFactory.getCurrentSession();
     }
 	
-	public T get(int id) {
+	public T get(long id) {
         return (T) getSession().get(type, id);
     }
     
@@ -36,8 +37,8 @@ public abstract class GenericDaoHibernate<T> implements GenericDao<T>{
         return (List<T>) (getSession().createQuery("from " + type.getName() + " x").list());
     }
     
-    public T save(T object) {
-        return (T) getSession().save(object);
+    public Serializable save(T object) {
+        return getSession().save(object);
     }
 
 }

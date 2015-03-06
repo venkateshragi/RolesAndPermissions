@@ -2,13 +2,17 @@ package com.simplotel.rolesandpermissions.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.security.core.GrantedAuthority;
+
 @Entity
 @Table(name="PERMISSION")
-public class Permission {
+public class Permission implements GrantedAuthority{
 	
 	@Id
     @GeneratedValue
@@ -18,9 +22,11 @@ public class Permission {
 	@Column(name="PERMISSION_NAME")
 	String name;
 	
+	@Enumerated(EnumType.STRING)
 	@Column(name = "PERMISSION_TYPE")
 	PermissionType permissionType;
 	
+	@Enumerated(EnumType.STRING)
 	@Column(name = "RESOURCE_TYPE")
 	ResourceType resourceType;
 
@@ -54,6 +60,10 @@ public class Permission {
 
 	public void setResourceType(ResourceType resourceType) {
 		this.resourceType = resourceType;
+	}
+
+	public String getAuthority() {
+		return name;
 	}
 
 }
