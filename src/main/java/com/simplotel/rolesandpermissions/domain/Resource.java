@@ -15,10 +15,35 @@ public class Resource {
     @GeneratedValue
     @Column(name = "ID")
     long id;
+	
+	@Column(name="RESOURCE_NAME")
+	String name;
     
     @Column(name = "RESOURCE_TYPE")
     ResourceType resourceType;
-	
-	
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public ResourceType getResourceType() {
+		return resourceType;
+	}
+
+	public void setResourceType(ResourceType resourceType) {
+		this.resourceType = resourceType;
+	}
 
 }

@@ -1,7 +1,6 @@
 package com.simplotel.rolesandpermissions.domain;
 
-public enum ResourceType {
-	
-	HOTEL
+public enum PermissionType {
 
+	CREATE, DELETE, EDIT
 }

@@ -18,4 +18,42 @@ public class Permission {
 	@Column(name="PERMISSION_NAME")
 	String name;
 	
+	@Column(name = "PERMISSION_TYPE")
+	PermissionType permissionType;
+	
+	@Column(name = "RESOURCE_TYPE")
+	ResourceType resourceType;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public PermissionType getPermissionType() {
+		return permissionType;
+	}
+
+	public void setPermissionType(PermissionType permissionType) {
+		this.permissionType = permissionType;
+	}
+
+	public ResourceType getResourceType() {
+		return resourceType;
+	}
+
+	public void setResourceType(ResourceType resourceType) {
+		this.resourceType = resourceType;
+	}
+
 }

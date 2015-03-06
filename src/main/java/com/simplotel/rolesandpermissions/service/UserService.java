@@ -5,5 +5,7 @@ import com.simplotel.rolesandpermissions.domain.User;
 public interface UserService {
 	
 	public void saveOrUpdateUser(User user);
+	
+	public User findByUsername(String username);
 
 }
