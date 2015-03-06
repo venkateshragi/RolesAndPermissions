@@ -16,7 +16,7 @@ Roles
 <table>
 <tr><th>RoleName</th></tr>
 <c:forEach items="${roles}" var="role">
-<tr>${role.roleName}</tr>
+<tr><td>${role.roleName}</td></tr>
 </c:forEach>
 
 </table>

@@ -14,9 +14,11 @@ Roles
 
 <body>
 <table>
-<tr><th>RoleName</th></tr>
+<tr>
+<th>Permission Name</th>
+</tr>
 <c:forEach items="${permissions}" var="permission">
-<tr>${permission.name}</tr>
+<tr><td>${permission.name}</td></tr>
 </c:forEach>
 
 </table>

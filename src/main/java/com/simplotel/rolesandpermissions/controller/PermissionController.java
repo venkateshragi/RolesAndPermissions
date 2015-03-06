@@ -20,7 +20,7 @@ public class PermissionController {
 	@RequestMapping("/all")
 	public ModelAndView allPermission(){
 		List<Permission> allPermissions = permissionService.getAll();
-		ModelAndView mav = new ModelAndView("add_permission");
+		ModelAndView mav = new ModelAndView("permissions");
 		mav.addObject("permissions", allPermissions);
 		return mav;
 	}

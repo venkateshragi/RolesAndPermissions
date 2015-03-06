@@ -27,7 +27,7 @@ public class RoleController extends BaseController {
 	@RequestMapping("/all")
 	public ModelAndView allRole(){
 		List<Role> allRoles = roleService.getAll();
-		ModelAndView mav = new ModelAndView("add_role");
+		ModelAndView mav = new ModelAndView("roles");
 		mav.addObject("roles", allRoles);
 		return mav;
 	}
