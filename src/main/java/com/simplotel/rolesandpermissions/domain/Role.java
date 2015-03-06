@@ -13,14 +13,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import org.springframework.security.core.GrantedAuthority;
-
 @Entity
 @Table(name="ROLE")
-public class Role implements GrantedAuthority{
+public class Role {
 	
-	private static final long serialVersionUID = 1L;
-
 	@Id
     @GeneratedValue
     @Column(name = "ID")
@@ -56,10 +52,5 @@ public class Role implements GrantedAuthority{
 	public void setPermissions(Set<Permission> permissions) {
 		this.permissions = permissions;
 	}
-
-	public String getAuthority() {
-		return roleName;
-	}
-
 
 }
